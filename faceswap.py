@@ -108,6 +108,7 @@ def annotate_landmarks(im, landmarks):
     return im
 
 def draw_convex_hull(im, points, color):
+    points = points.astype(numpy.int32)
     points = cv2.convexHull(points)
     cv2.fillConvexPoly(im, points, color=color)
 
